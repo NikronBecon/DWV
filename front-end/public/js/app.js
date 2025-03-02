@@ -15,7 +15,7 @@ const formatCurrency = (amount) => {
 // Load films data
 async function loadFilms() {
     try {
-        const response = await fetch('../data/movies.json');
+        const response = await fetch('front-end/public/data/movies.json');
         films = await response.json();
         filteredFilms = [...films];
         
