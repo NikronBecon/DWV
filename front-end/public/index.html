@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest Grossing Films</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Highest Grossing Films</h1>
+        <div class="search-filters">
+            <input type="text" id="searchInput" placeholder="Search films...">
+            <select id="yearFilter">
+                <option value="">All Years</option>
+            </select>
+            <div class="sort-controls">
+                <label>Sort by:</label>
+                <button id="sortTitle">Title</button>
+                <button id="sortYear">Year</button>
+                <button id="sortRevenue">Box Office</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="films-grid" id="filmsContainer">
+            <!-- Films will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>Data sourced from Wikipedia's List of Highest-Grossing Films</p>
+    </footer>
+
+    <template id="filmCardTemplate">
+        <div class="film-card">
+            <h2 class="film-title"></h2>
+            <div class="film-details">
+                <p class="year"></p>
+                <p class="director"></p>
+                <p class="box-office"></p>
+                <p class="country"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
