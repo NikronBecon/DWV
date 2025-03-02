@@ -15,8 +15,12 @@ const formatCurrency = (amount) => {
 // Load films data
 async function loadFilms() {
     try {
-        const response = await fetch('../data/movies.json');
+        const response = await fetch('./public/movies.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         films = await response.json();
+        console.log('Loaded films:', films.length);
         filteredFilms = [...films];
         
         // Populate year filter
@@ -33,7 +37,7 @@ async function loadFilms() {
     } catch (error) {
         console.error('Error loading films:', error);
         const container = document.getElementById('filmsContainer');
-        container.innerHTML = '<div class="error-message">Error loading film data. Please try again later.</div>';
+        container.innerHTML = `<div class="error-message">Error loading film data: ${error.message}</div>`;
     }
 }
 
