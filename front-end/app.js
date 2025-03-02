@@ -15,7 +15,7 @@ const formatCurrency = (amount) => {
 // Load films data
 async function loadFilms() {
     try {
-        const response = await fetch('./public/movies.json');
+        const response = await fetch('public/movies.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
