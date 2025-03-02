@@ -15,7 +15,7 @@ const formatCurrency = (amount) => {
 // Load films data
 async function loadFilms() {
     try {
-        const response = await fetch('../data/movies.json');
+        const response = await fetch('./data/movies.json');
         films = await response.json();
         filteredFilms = [...films];
         
@@ -32,6 +32,8 @@ async function loadFilms() {
         displayFilms(films);
     } catch (error) {
         console.error('Error loading films:', error);
+        const container = document.getElementById('filmsContainer');
+        container.innerHTML = '<div class="error-message">Error loading film data. Please try again later.</div>';
     }
 }
 
